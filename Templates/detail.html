@@ -1,0 +1,69 @@
+{%extends 'base.html' %}
+
+{%block head%}
+
+
+
+
+{%endblock%}
+
+
+{%block body%}
+
+<section class="container">
+    <header>Enter Your Details</header>
+    <form method="POST" action="/predict"class="form" >
+
+
+      <div class="column">
+        <div class="input-box">
+          <input type="number" placeholder="Number of Trainings(yr)" name="training" max="7" maxlength="1" required />
+        </div></div>
+       
+      </div>
+      <div class="input-box">
+        
+        <input type="number" placeholder="Previous Year Rating" name="Previous" max="5" maxlength="1" required />
+        </div>
+        
+            <div class="input-box">
+            <input typer="number" placeholder="Length Of Service(yr)" name="Service" maxlength="2" required />
+
+        </div></div>
+        
+        <div class="column">
+          <div class="input-box">
+            <div class="select-box">
+              
+          <select name="KPI" required>
+            <option hidden> KPI MET? (1(YES) OR 0(NO))</option>
+            <option>0</option>
+            <option>1</option>
+            </select>
+          </div></div></div>
+          <div class="column">
+          
+            <div class="input-box">
+          <input type="number" placeholder="Average Trainings Score" name="Average" max="99" maxlength="2" required />
+          </div></div>
+          <div class="column">
+            <div class="input-box">
+            <div class="select-box">
+          <select name="Award" required>
+            <option hidden>Award won? (1(Yes) or 0(NO))</option>
+            <option>0</option>
+            <option>1</option>
+            </select>
+        </div>
+        </div></div>
+      </div>
+      <button type="submit">Check</button>
+      <br><h2><b>{{pred}}</b></h2><br>
+    </form>
+  </section>
+  
+{%endblock%}
+
+
+
+ 
